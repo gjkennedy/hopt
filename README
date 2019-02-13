@@ -1,0 +1,13 @@
+This is a python-based optimizer for parallel large-scale gradient-based optimization with optional Hessian-vector product capabilities. The code is entirely in python. It is a research code, and is not always robust. Only limited examples are provided.
+
+hopt uses an interior-point method with various barrier updating schemes including a Fiacco and McCormick and a Mehrotra predictor-corrector scheme. A limited-memory BFGS updating method is used to form an approximate Hessian, and its inverse.
+
+The main distinguishing features of this optimizer include:
+
+1. The capability to handle large sparse constrained problems with millions of constraints - this is required for large 3D multi-material topology optimization.
+2. The use of approximate Hessian-vector products to speed up convergence.
+3. The ability to parallelize the preconditioning operations required used at each major iteration of the optimization.
+
+To install hopt use setup.py:
+
+python setup.py develop --user
